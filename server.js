@@ -3,7 +3,7 @@ require('dotenv').config();
 var express = require('express');
 var passport = require('passport');
 var Strategy = require('passport-facebook').Strategy;
-
+var cors = require('cors')
 
 // Configure the Facebook strategy for use by Passport.
 //
@@ -59,6 +59,15 @@ app.use(require('cookie-parser')());
 app.use(require('body-parser').urlencoded({ extended: true }));
 app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveUninitialized: true }));
 
+
+var corsOption = {
+  origin: true,
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+  exposedHeaders: ['x-auth-token']
+};
+app.use(cors(corsOption));
+
 // Initialize Passport and restore authentication state, if any, from the
 // session.
 app.use(passport.initialize());
@@ -91,4 +100,8 @@ app.get('/profile',
     res.render('profile', { user: req.user });
   });
 
-app.listen(process.env['PORT'] || 8080);
+app.get("/logout", function(req, res) {
+    req.logout();
+    res.send("logout success!");
+});
+app.listen(process.env['PORT'] || 3000);

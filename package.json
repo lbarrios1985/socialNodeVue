@@ -1,21 +1,23 @@
 {
-  "name": "express-4.x-facebook-example",
+  "name": "socialNodeVue_lbarrios1985",
   "version": "0.0.0",
   "description": "Express 4.x app using Passport for authentication with Facebook.",
   "keywords": [
-    "example",
+    "test",
     "express",
-    "passport"
+    "passport",
+    "Facebook",
+    "Google"
   ],
-  "author": "Jared Hanson",
+  "author": "Luis Barrios",
   "license": "Unlicense",
-  "homepage": "https://github.com/passport/express-4.x-facebook-example",
+  "homepage": "https://github.com/lbarrios1985/socialNodeVue.git",
   "repository": {
     "type": "git",
-    "url": "git://github.com/passport/express-4.x-facebook-example.git"
+    "url": "git://github.com/lbarrios1985/socialNodeVue.git"
   },
   "bugs": {
-    "url": "https://github.com/passport/express-4.x-facebook-example/issues"
+    "url": "https://github.com/lbarrios1985/socialNodeVue.git/issues"
   },
   "dependencies": {
     "body-parser": "^1.13.2",
